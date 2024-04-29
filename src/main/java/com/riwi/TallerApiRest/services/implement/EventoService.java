@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @AllArgsConstructor
@@ -27,12 +26,15 @@ public class EventoService implements IEventoService {
     }
 
     @Override
-    public Evento getById(Long id) {
-        return this.objEventoRepository.findById(id).orElseThrow();
+     public Evento getById(String id) {
+            return    this.objEventoRepository.findById(id).orElseThrow();
+
     }
 
+
+
     @Override
-    public void delete(Long id) {
+    public void delete(String id) {
         this.objEventoRepository.deleteById(id);
     }
 

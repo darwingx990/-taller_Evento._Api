@@ -8,7 +8,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/v1/events")
@@ -30,18 +29,18 @@ public class EventoController {
     }
 
     @GetMapping(path = "/{id}")
-    public ResponseEntity<Evento> findById(@PathVariable Long id) {
+    public ResponseEntity<Evento> findById(@PathVariable String id) {
         return ResponseEntity.ok(this.objEventoService.getById(id));
     }
 
-    @PutMapping(path = "/id")
-    public ResponseEntity<Evento> update(@RequestBody Evento objEvento, @PathVariable Long id) {
+    @PutMapping(path = "/{id}")
+    public ResponseEntity<Evento> update(@RequestBody Evento objEvento, @PathVariable String id) {
         objEvento.setId(id);
         return ResponseEntity.ok(this.objEventoService.update(objEvento));
     }
 
     @DeleteMapping(path = "/{id}")
-    public ResponseEntity<Void> delete(@PathVariable Long id) {
+    public ResponseEntity<Void> delete(@PathVariable String id) {
         this.objEventoService.delete(id);
         return ResponseEntity.noContent().build();
     }

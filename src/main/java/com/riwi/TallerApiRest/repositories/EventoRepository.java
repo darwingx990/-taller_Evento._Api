@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Repository
-public interface EventoRepository extends JpaRepository<Evento, Long> {
+public interface EventoRepository extends JpaRepository<Evento, String> {
 
 
 }
