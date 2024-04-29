@@ -17,8 +17,8 @@ import java.time.LocalDate;
 
 public class Evento {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private String id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String nombre;
     private LocalDate fecha;
     private String ubicacion;
